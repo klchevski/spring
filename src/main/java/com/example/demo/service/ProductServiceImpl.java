@@ -9,16 +9,17 @@ import java.util.List;
 
 @Service
 public class ProductServiceImpl implements ProductService {
-
+    private ArrayList<Product> productArrayList = new ArrayList<>();
 
     @Override
     public List<Product> allProducts() {
-        ArrayList<Product> allProducts = new ArrayList<>();
-
-        allProducts.add(new Product(1, "Eraser", 3000));
-        allProducts.add(new Product(2, "notebook", 35000));
-        allProducts.add(new Product(3, "Pencil", 2000));
-
-        return allProducts;
+        return productArrayList;
     }
+
+    @Override
+    public void save(Product product) {
+        productArrayList.add(product);
+    }
+
+
 }
