@@ -30,4 +30,9 @@ public class ProductController {
     Product findById(@RequestParam("id") int id) {
         return productService.findById(id);
     }
+
+    @GetMapping("products/summaProducts")
+    Integer summa() {
+        return productService.summa();
+    }
 }
