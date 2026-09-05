@@ -21,5 +21,18 @@ public class ProductServiceImpl implements ProductService {
         productArrayList.add(product);
     }
 
+    @Override
+    public Product findById(int id) {
+        Product product = null;
+
+        for (Product product1 : productArrayList) {
+            if (product1.getId() == id) {
+                product = product1;
+                break;
+            }
+        }
+        return product;
+    }
+
 
 }
