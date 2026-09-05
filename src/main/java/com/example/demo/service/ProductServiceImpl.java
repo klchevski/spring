@@ -34,5 +34,16 @@ public class ProductServiceImpl implements ProductService {
         return product;
     }
 
+    @Override
+    public Integer summa() {
+        int summa = 0;
+
+        for (Product product : productArrayList) {
+            summa += product.getPrice();
+        }
+
+        return summa;
+    }
+
 
 }
