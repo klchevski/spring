@@ -14,4 +14,6 @@ public interface ProductService {
     Product findById(int id);
 
     Integer summa();
+
+    Product findByMaxProduct();
 }

@@ -45,5 +45,18 @@ public class ProductServiceImpl implements ProductService {
         return summa;
     }
 
+    @Override
+    public Product findByMaxProduct() {
+        Product product1 = null;
+        int max = 0;
+        for (Product product : productArrayList) {
+            if (max < product.getPrice()) {
+                product1 = product;
+                max = product.getPrice();
+            }
+        }
+        return product1;
+    }
+
 
 }
