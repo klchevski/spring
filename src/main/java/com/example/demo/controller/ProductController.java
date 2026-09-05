@@ -35,4 +35,9 @@ public class ProductController {
     Integer summa() {
         return productService.summa();
     }
+
+    @GetMapping("products/maxProduct")
+    Product findByMaxProduct() {
+        return productService.findByMaxProduct();
+    }
 }
