@@ -16,4 +16,6 @@ public interface ProductService {
     Integer summa();
 
     Product findByMaxProduct();
+
+    Product findMinProduct();
 }
