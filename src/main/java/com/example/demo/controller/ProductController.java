@@ -40,4 +40,9 @@ public class ProductController {
     Product findByMaxProduct() {
         return productService.findByMaxProduct();
     }
+
+    @GetMapping("products/minProduct")
+    Product findByMinProduct() {
+        return productService.findMinProduct();
+    }
 }

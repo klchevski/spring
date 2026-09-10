@@ -58,5 +58,18 @@ public class ProductServiceImpl implements ProductService {
         return product1;
     }
 
+    @Override
+    public Product findMinProduct() {
+        Product product = productArrayList.get(0);
+        int min = productArrayList.get(0).getPrice();
+        for (Product product1 : productArrayList) {
+            if (product1.getPrice() < min) {
+                product = product1;
+                min = product1.getPrice();
+            }
+        }
+        return product;
+    }
+
 
 }
