@@ -71,5 +71,16 @@ public class ProductServiceImpl implements ProductService {
         return product;
     }
 
+    @Override
+    public List<Product> findDiapazon(int from, int to) {
+        ArrayList<Product> productArrayList1 = new ArrayList<>();
+
+        for (Product product : productArrayList) {
+            if (product.getPrice() > from && product.getPrice() < to) {
+                productArrayList1.add(product);
+            }
+        }
+        return productArrayList1;
+    }
 
 }
