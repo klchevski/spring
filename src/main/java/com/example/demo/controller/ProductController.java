@@ -45,4 +45,9 @@ public class ProductController {
     Product findByMinProduct() {
         return productService.findMinProduct();
     }
+
+    @GetMapping("products/diapazon")
+    List<Product> findDiapazon(@RequestParam ("from") int from, @RequestParam("to") int to) {
+        return productService.findDiapazon(from, to);
+    }
 }

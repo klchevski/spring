@@ -18,4 +18,6 @@ public interface ProductService {
     Product findByMaxProduct();
 
     Product findMinProduct();
+
+    List<Product> findDiapazon(int from, int to);
 }
