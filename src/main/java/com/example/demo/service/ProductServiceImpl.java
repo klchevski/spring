@@ -61,7 +61,7 @@ public class ProductServiceImpl implements ProductService {
             }
         }
         if (product1 == null) {
-            throw new ProductNotFoundException("product not found");
+            throw new ProductNotFoundException("Product not found");
         }
         return product1;
     }
@@ -69,7 +69,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product findMinProduct() {
         if (productArrayList.isEmpty()) {
-            throw new ProductNotFoundException("product not found");
+            throw new ProductNotFoundException("Product not found");
         }
         Product product = productArrayList.get(0);
         int min = productArrayList.get(0).getPrice();
