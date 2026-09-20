@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.exception.ProductNotFoundException;
+import com.example.demo.exception.ProductTotalException;
 import com.example.demo.model.Product;
 import com.example.demo.repository.ProductRepository;
 import org.springframework.stereotype.Service;
@@ -46,6 +47,10 @@ public class ProductServiceImpl implements ProductService {
 
         for (Product product : productArrayList) {
             summa += product.getPrice();
+        }
+
+        if (summa == 0) {
+            throw new ProductTotalException("Total not found");
         }
         return summa;
     }
