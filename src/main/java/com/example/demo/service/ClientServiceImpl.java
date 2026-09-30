@@ -43,4 +43,19 @@ public class ClientServiceImpl implements ClientService {
         }
         return total;
     }
+
+    @Override
+    public Integer getNullBalanceCount() {
+        List<Client> allClients = clientRepository.findAll();
+
+        int total = 0;
+        for (Client client : allClients) {
+            String balance = client.getBalance() + "";
+            if (balance.endsWith("0")) {
+                total++;
+            }
+        }
+
+        return total;
+    }
 }

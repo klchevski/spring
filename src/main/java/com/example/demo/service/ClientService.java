@@ -10,4 +10,6 @@ public interface ClientService {
     List<Client> getAllClients();
 
     Integer totalBalanceDiapazon(int min, int max);
+
+    Integer getNullBalanceCount();
 }
