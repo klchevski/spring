@@ -31,4 +31,9 @@ public class ClientController {
         return clientService.totalBalanceDiapazon(min, max);
     }
 
+    @GetMapping("clients/nullBalanceCount")
+    Integer getNullBalanceCount () {
+        return clientService.getNullBalanceCount();
+    }
 }
+
