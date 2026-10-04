@@ -32,8 +32,13 @@ public class ClientController {
     }
 
     @GetMapping("clients/nullBalanceCount")
-    Integer getNullBalanceCount () {
+    Integer getNullBalanceCount() {
         return clientService.getNullBalanceCount();
+    }
+
+    @GetMapping("clients/maxBalance")
+    Client getMaxBalance() {
+        return clientService.getMaxBalance();
     }
 }
 
