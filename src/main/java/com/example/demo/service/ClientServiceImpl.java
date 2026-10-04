@@ -58,4 +58,19 @@ public class ClientServiceImpl implements ClientService {
 
         return total;
     }
+
+    @Override
+    public Client getMaxBalance() {
+        List<Client> clientsBalance = clientRepository.findAll();
+        Client clientMax = null;
+        int max = 0;
+        for (Client client : clientsBalance) {
+            if (max < client.getBalance()) {
+                clientMax = client;
+                max = client.getBalance();
+            }
+        }
+
+        return clientMax;
+    }
 }

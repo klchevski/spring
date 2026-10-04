@@ -12,4 +12,6 @@ public interface ClientService {
     Integer totalBalanceDiapazon(int min, int max);
 
     Integer getNullBalanceCount();
+
+    Client getMaxBalance();
 }
