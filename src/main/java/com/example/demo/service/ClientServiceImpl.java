@@ -27,6 +27,12 @@ public class ClientServiceImpl implements ClientService {
         return clientRepository.findAll();
     }
 
+    /**
+     * Calculate total balance from balance range
+     * @param min balance from
+     * @param max balance to
+     * @return The total balance
+     */
     @Override
     public Integer totalBalanceDiapazon(int min, int max) {
         List<Client> allClients = clientRepository.findAll();
