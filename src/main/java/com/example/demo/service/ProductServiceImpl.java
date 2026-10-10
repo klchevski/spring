@@ -22,6 +22,11 @@ public class ProductServiceImpl implements ProductService {
         productArrayList.add(product);
     }
 
+    /**
+     * Find product by id
+     * @param id the id of product
+     * @return found product
+     */
     @Override
     public Product findById(int id) {
         Product product = null;
@@ -40,6 +45,10 @@ public class ProductServiceImpl implements ProductService {
         return product;
     }
 
+    /**
+     * Get total sum of products
+     * @return total balance
+     */
     @Override
     public Integer summa() {
         int summa = 0;
