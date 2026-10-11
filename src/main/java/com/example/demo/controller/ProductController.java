@@ -47,7 +47,12 @@ public class ProductController {
     }
 
     @GetMapping("products/diapazon")
-    List<Product> findDiapazon(@RequestParam ("from") int from, @RequestParam("to") int to) {
+    List<Product> findDiapazon(@RequestParam("from") int from, @RequestParam("to") int to) {
         return productService.findDiapazon(from, to);
+    }
+
+    @GetMapping("products/rangeCount")
+    Integer getTotalRangeCount(@RequestParam("from") int from, @RequestParam("to") int to) {
+        return productService.getTotalBalanceRangeCount(from, to);
     }
 }

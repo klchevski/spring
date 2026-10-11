@@ -20,4 +20,6 @@ public interface ProductService {
     Product findMinProduct();
 
     List<Product> findDiapazon(int from, int to);
+
+    Integer getTotalBalanceRangeCount(int from, int to);
 }

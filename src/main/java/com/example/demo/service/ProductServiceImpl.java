@@ -12,11 +12,21 @@ import java.util.List;
 public class ProductServiceImpl implements ProductService {
     private ArrayList<Product> productArrayList = new ArrayList<>();
 
+    /**
+     * Find products
+     *
+     * @return {@link List} of products
+     */
     @Override
     public List<Product> allProducts() {
         return productArrayList;
     }
 
+    /**
+     * Save product
+     *
+     * @param product to List products
+     */
     @Override
     public void save(Product product) {
         productArrayList.add(product);
@@ -24,6 +34,7 @@ public class ProductServiceImpl implements ProductService {
 
     /**
      * Find product by id
+     *
      * @param id the id of product
      * @return found product
      */
@@ -47,6 +58,7 @@ public class ProductServiceImpl implements ProductService {
 
     /**
      * Get total sum of products
+     *
      * @return total balance
      */
     @Override
@@ -63,6 +75,12 @@ public class ProductServiceImpl implements ProductService {
         return summa;
     }
 
+    /**
+     * Find max product by balance
+     *
+     * @return the max product
+     * @throws {@link ProductNotFoundException} when products not exists
+     */
     @Override
     public Product findByMaxProduct() {
         Product product1 = null;
@@ -79,6 +97,11 @@ public class ProductServiceImpl implements ProductService {
         return product1;
     }
 
+    /**
+     * Find min products by balance
+     *
+     * @return the min product
+     */
     @Override
     public Product findMinProduct() {
         if (productArrayList.isEmpty()) {
@@ -95,6 +118,13 @@ public class ProductServiceImpl implements ProductService {
         return product;
     }
 
+    /**
+     * Find products by balance range
+     *
+     * @param from min balance
+     * @param to   max balace
+     * @return {@link List} of products
+     */
     @Override
     public List<Product> findDiapazon(int from, int to) {
         ArrayList<Product> productArrayList1 = new ArrayList<>();
@@ -105,5 +135,16 @@ public class ProductServiceImpl implements ProductService {
             }
         }
         return productArrayList1;
+    }
+
+    @Override
+    public Integer getTotalBalanceRangeCount(int from, int to) {
+        int count = 0;
+        for (Product product : productArrayList) {
+            if (product.getPrice() > from && product.getPrice() < to) {
+                count++;
+            }
+        }
+        return count;
     }
 }
