@@ -14,4 +14,6 @@ public interface ClientService {
     Integer getNullBalanceCount();
 
     Client getMaxBalance();
+
+    Integer getTotalMaxMin();
 }
