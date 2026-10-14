@@ -84,7 +84,7 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public Integer getTotalMaxMin() {
         List<Client> clientsBalance = clientRepository.findAll();
-        int min = 0;
+        int min = clientsBalance.get(0).getBalance();
         int max = 0;
         for (Client client : clientsBalance) {
             if (max < client.getBalance()) {
