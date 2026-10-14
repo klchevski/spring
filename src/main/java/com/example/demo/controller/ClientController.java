@@ -40,5 +40,10 @@ public class ClientController {
     Client getMaxBalance() {
         return clientService.getMaxBalance();
     }
+
+    @GetMapping("clients/totalBalanceMinMax")
+    Integer getTotalBalanceMinMax() {
+        return clientService.getTotalMaxMin();
+    }
 }
 

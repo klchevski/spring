@@ -29,6 +29,7 @@ public class ClientServiceImpl implements ClientService {
 
     /**
      * Calculate total balance from balance range
+     *
      * @param min balance from
      * @param max balance to
      * @return The total balance
@@ -78,5 +79,23 @@ public class ClientServiceImpl implements ClientService {
         }
 
         return clientMax;
+    }
+
+    @Override
+    public Integer getTotalMaxMin() {
+        List<Client> clientsBalance = clientRepository.findAll();
+        int min = clientsBalance.get(0).getBalance();
+        int max = 0;
+        for (Client client : clientsBalance) {
+            if (max < client.getBalance()) {
+                max = client.getBalance();
+            }
+
+            if (min > client.getBalance()) {
+                min = client.getBalance();
+            }
+        }
+
+        return max + min;
     }
 }
