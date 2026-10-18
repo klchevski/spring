@@ -45,5 +45,10 @@ public class ClientController {
     Integer getTotalBalanceMinMax() {
         return clientService.getTotalMaxMin();
     }
+
+    @GetMapping("clients/validateCardNumberById")
+    Boolean validateCardNumberById(@RequestParam("id") int id) {
+        return clientService.validateCardNumberById(id);
+    }
 }
 
