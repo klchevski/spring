@@ -16,4 +16,6 @@ public interface ClientService {
     Client getMaxBalance();
 
     Integer getTotalMaxMin();
+
+    Boolean validateCardNumberById(int id);
 }
