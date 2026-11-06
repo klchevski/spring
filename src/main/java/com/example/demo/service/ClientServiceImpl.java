@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.exception.ClientNotFoundException;
 import com.example.demo.model.Client;
 import com.example.demo.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -97,5 +98,24 @@ public class ClientServiceImpl implements ClientService {
         }
 
         return max + min;
+    }
+
+    @Override
+    public Boolean validateCardNumberById(int id) {
+        List<Client> clientList = clientRepository.findAll();
+        boolean isFound = false;
+        for (Client client : clientList) {
+            if (client.getId() == id) {
+                isFound = true;
+                if (client.getCardNumber().length() > 8) {
+                    return true;
+                }
+            }
+        }
+        if (isFound == false) {
+            throw new ClientNotFoundException("id not found");
+        }
+
+        return false;
     }
 }
